@@ -5,8 +5,8 @@ Valgrind Memory Leaks Check <br />
 &emsp;running following command on terminal will generate a report (valgrind.txt) with memory leak information - <br />
 
 &emsp;&emsp;valgrind --leak-check=full \ <br />
-    --show-leak-kinds=all \    <br />
-    --track-origins=yes \  <br />
-    --verbose \    <br />
-    --log-file=valgrind-out.txt \  <br />
-    ./main <br />
+    &emsp;&emsp;--show-leak-kinds=all \    <br />
+    &emsp;&emsp;--track-origins=yes \  <br />
+    &emsp;&emsp;--verbose \    <br />
+    &emsp;&emsp;--log-file=valgrind-out.txt \  <br />
+    &emsp;&emsp;./main <br />
