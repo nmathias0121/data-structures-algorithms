@@ -1,11 +1,11 @@
 # search-sort-algorithms
-contains search &amp; sort algorithms for template data lists / arrays
+contains search &amp; sort algorithms for template data lists or arrays <br />
 
-Valgrind Memory Leaks Check
-    running following command on terminal will generate a report (valgrind.txt) with memory leak information -
-        valgrind --leak-check=full \
-         --show-leak-kinds=all \
-         --track-origins=yes \
-         --verbose \
-         --log-file=valgrind-out.txt \
-         ./main
+Valgrind Memory Leaks Check <br />
+    running following command on terminal will generate a report (valgrind.txt) with memory leak information - <br />
+        valgrind --leak-check=full \ <br />
+         --show-leak-kinds=all \    <br />
+         --track-origins=yes \  <br />
+         --verbose \    <br />
+         --log-file=valgrind-out.txt \  <br />
+         ./main <br />
