@@ -11,6 +11,6 @@ int main() {
 
     int ibs = iterative_binary_search(a, 0, size_a - 1, 16);
 
-    printf("%d %d %d", ls, rbs, ibs);
+    printf("%d %d %d\n", ls, rbs, ibs);
     return 0;
 }
