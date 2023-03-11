@@ -10,3 +10,10 @@ contains search &amp; sort algorithms for template data lists or arrays <br />
     &emsp;&emsp;--verbose \    <br />
     &emsp;&emsp;--log-file=valgrind-out.txt \  <br />
     &emsp;&emsp;./main <br />
+
+**Search Algorithms** <br />
+- Linear Search
+- Recursive Binary Search (works on ascending sorted array only)
+- Iterative Binary Search (works on ascending sorted array only)
+
+**Sort Algorithms** <br />
