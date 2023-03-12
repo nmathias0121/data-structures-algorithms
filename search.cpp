@@ -7,12 +7,12 @@ int main() {
 
     int size_a = sizeof(a) / sizeof(a[0]);
     int size_ch = sizeof(ch) / sizeof(ch[0]);
-    int ls =linear_search(a, 17, size_a);
-    int lsch =linear_search(ch, 'n', size_ch);
+    int ls =linear_search<int>(a, 17, size_a);
+    int lsch =linear_search<char>(ch, 'n', size_ch);
 
-    int rbs = recursive_binary_search(a, 17, 0, size_a - 1);
+    int rbs = recursive_binary_search<int>(a, 17, 0, size_a - 1);
 
-    int ibs = iterative_binary_search(a, 16, 0, size_a - 1);
+    int ibs = iterative_binary_search<int>(a, 16, 0, size_a - 1);
 
     printf("%d %d %d\n", lsch, rbs, ibs);
     return 0;
