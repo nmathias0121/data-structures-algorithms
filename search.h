@@ -22,7 +22,7 @@ int linear_search(T arr[], T element, size_t arr_size) {
 
 // Recursive Binary Search Algorithm
 // Time complexity : O(log n)
-// Params : sorted array, start index, end index, element to search in array
+// Params : sorted array, element to search in array, start index, end index
 // Returns : index if element found, -1 otherwise
 template <typename T>
 int recursive_binary_search(T arr[], T element, int start, int end) {
@@ -46,7 +46,7 @@ int recursive_binary_search(T arr[], T element, int start, int end) {
 
 // Iterative Binary Search Algorithm
 // Time complexity : O(log n)
-// Params : sorted array, start index, end index, element to search in array
+// Params : sorted array, , element to search in array, start index, end index
 // Returns : index if element found, -1 otherwise
 template <typename T>
 int iterative_binary_search(int arr[], T element, int start, int end) {
