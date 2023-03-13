@@ -5,7 +5,7 @@
 template <typename T>
 void swap(T *element1, T *element2) 
 { 
-    int temp = *element1; 
+    T temp = *element1; 
     *element1 = *element2; 
     *element2 = temp; 
 } 
