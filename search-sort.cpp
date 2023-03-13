@@ -18,7 +18,11 @@ int main() {
     printf("%d %d %d\n", lsch, rbs, ibs);
 
     int k[] = {77, 45, 23, 44, 12, 3};
-    selectionSort(k, 6);
+    bubble_sort(k, 6);
+    for (int i = 0; i < 6; i++) {
+        printf("\n%d", k[i]);
+    }
+    selection_sort(k, 6);
     for (int i = 0; i < 6; i++) {
         printf("\n%d", k[i]);
     }
