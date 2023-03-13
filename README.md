@@ -17,3 +17,5 @@ contains search &amp; sort algorithms for template data lists or arrays <br />
 - Iterative Binary Search (works on ascending sorted array only)
 
 **Sort Algorithms** <br />
+- Selection Sort
+- Bubble Sort
