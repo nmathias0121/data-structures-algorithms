@@ -1,4 +1,5 @@
 #include "search.h"
+#include "sort.h"
 
 int main() {
 
@@ -15,5 +16,11 @@ int main() {
     int ibs = iterative_binary_search<int>(a, 16, 0, size_a - 1);
 
     printf("%d %d %d\n", lsch, rbs, ibs);
+
+    int k[] = {77, 45, 23, 44, 12, 3};
+    selectionSort(k, 6);
+    for (int i = 0; i < 6; i++) {
+        printf("\n%d", k[i]);
+    }
     return 0;
 }
