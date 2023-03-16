@@ -132,7 +132,7 @@ void insertion_sort(T arr[], size_t arr_size)
 
 // Merge sort algorithm
 // Time Complexity : O(nlog(n))
-// Params : array, size of array
+// Params : array, start, end indices
 template <typename T>
 void merge_sort(T arr[], int start, int end)
 {
