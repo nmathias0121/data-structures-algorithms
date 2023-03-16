@@ -1,6 +1,7 @@
 // Sort Algorithms
 #include <stdio.h>
 
+/************************* Helper Functions *********************/
 // swap two elements of type T
 template <typename T>
 void swap(T *element1, T *element2) 
@@ -9,6 +10,57 @@ void swap(T *element1, T *element2)
     *element1 = *element2; 
     *element2 = temp; 
 } 
+
+// merges two subarrays
+// used for merge sort
+template <typename T>
+void merge(T arr[], int start, int mid, int end)
+{
+    int i, j, k;
+    // first subarray
+    int len_subarr_1 = mid - start + 1;
+    T subarr_1[len_subarr_1];
+    for (i = 0; i < len_subarr_1; i++)
+        subarr_1[i] = arr[start + i];
+
+    // second subarray
+    int len_subarr_2 = end - mid;
+    T subarr_2[len_subarr_2];
+    for (j = 0; j < len_subarr_2; j++)
+        subarr_2[j] = arr[mid + 1 + j];
+  
+    // merge sub arrays into arr[start:end]
+    i = 0;
+    j = 0;
+    k = start;
+    while (i < len_subarr_1 && j < len_subarr_2) {
+        if (subarr_1[i] <= subarr_2[j]) {
+            arr[k] = subarr_1[i];
+            i++;
+        }
+        else {
+            arr[k] = subarr_2[j];
+            j++;
+        }
+        k++;
+    }
+  
+    // copy remaining elements of subarr_1[]
+    while (i < len_subarr_1) {
+        arr[k] = subarr_1[i];
+        i++;
+        k++;
+    }
+  
+    // copy remaining elements of subarr_2[]
+    while (j < len_subarr_2) {
+        arr[k] = subarr_2[j];
+        j++;
+        k++;
+    }
+}
+
+/************************* End Of Helper Functions *********************/
 
 // Selection sort algorithm
 // Time Complexity : O(n^2)
@@ -74,5 +126,23 @@ void insertion_sort(T arr[], size_t arr_size)
             j = j - 1;
         }
         arr[j + 1] = key;         // either arr[j] <= key or key is assigned to 0 index in array 
+    }
+}
+
+
+// Merge sort algorithm
+// Time Complexity : O(nlog(n))
+// Params : array, size of array
+template <typename T>
+void merge_sort(T arr[], int start, int end)
+{
+    if (start < end) {
+        int mid = start + (end - start) / 2;
+  
+        // break down array to smallest parts through recursion
+        merge_sort(arr, start, mid);         // sort first half of array
+        merge_sort(arr, mid + 1, end);       // sort second half of array
+  
+        merge(arr, start, mid, end);        // merge two sorted arrays
     }
 }

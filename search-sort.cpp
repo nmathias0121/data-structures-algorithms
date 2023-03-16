@@ -19,7 +19,7 @@ int main() {
 
     int k[] = {77, 45, 23, 44, 12, 3};
     char kch[] = {'z', 's', 'd', 'b', 'k', 'a'};
-    insertion_sort(kch, 6);
+    merge_sort(kch, 0, 5);
     for (int i = 0; i < 6; i++) {
         printf("\n%c", kch[i]);
     }

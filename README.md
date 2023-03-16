@@ -20,3 +20,4 @@ contains search &amp; sort algorithms for template data lists or arrays <br />
 - Selection Sort
 - Bubble Sort
 - Insertion Sort
+- Merge Sort
