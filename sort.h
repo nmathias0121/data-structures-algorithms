@@ -11,7 +11,7 @@ void swap(T *element1, T *element2)
     *element2 = temp; 
 } 
 
-// merges two subarrays
+// merges two subarrays (for merge sort)
 // used for merge sort
 template <typename T>
 void merge(T arr[], int start, int mid, int end)
@@ -58,6 +58,31 @@ void merge(T arr[], int start, int mid, int end)
         j++;
         k++;
     }
+}
+
+// partition using the last element (for quick sort)
+// arr elements < last element in left partition
+// arr elements > last element in right partition
+template <typename T>
+int partition(T arr[], int start, int end)
+{
+    int pivot = arr[end];       //set last element as pivot
+    int i = (start - 1); 
+  
+    for (int j = start; j <= end - 1; j++) {
+        // current element less than pivot
+        if (arr[j] < pivot) {
+            i++; // increment index of smaller element
+            T tmp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = tmp;
+        }
+    }
+    T tmp = arr[i+1];
+    arr[i+1] = arr[end];
+    arr[end] = tmp;
+    
+    return (i + 1);
 }
 
 /************************* End Of Helper Functions *********************/
@@ -144,5 +169,23 @@ void merge_sort(T arr[], int start, int end)
         merge_sort(arr, mid + 1, end);       // sort second half of array
   
         merge(arr, start, mid, end);        // merge two sorted arrays
+    }
+}
+  
+// Quick sort algorithm
+// Time Complexity : O(n^2)
+// Params : array, start, end indices
+template <typename T>
+void quick_sort(T arr[], int start, int end)
+{
+    if (start < end) {
+        // partition using the last element
+        // arr elements < last element in left partition
+        // arr elements > last element in right partition
+        int pivot = partition(arr, start, end);
+  
+        // Separately sort elements for left & right partitions
+        quick_sort(arr, start, pivot - 1);
+        quick_sort(arr, pivot + 1, end);
     }
 }
