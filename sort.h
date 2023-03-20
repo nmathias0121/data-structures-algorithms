@@ -73,10 +73,12 @@ int partition(T arr[], int start, int end)
         // current element less than pivot
         if (arr[j] < pivot) {
             i++; // increment index of smaller element
+            // move greater element to the right/end of array by swapping
             T tmp = arr[i];
             arr[i] = arr[j];
             arr[j] = tmp;
         }
+        //else move forward in array with respect to j without changing i, arr[j] will end up in right partition
     }
     T tmp = arr[i+1];
     arr[i+1] = arr[end];
