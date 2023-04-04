@@ -36,6 +36,9 @@ public:
 
     //destructor
     ~SingleLinkedList();
+
+    //length of list
+    int getLengthList();
   
     //add element to end of list
     void insertNode(T element);
@@ -63,6 +66,26 @@ SingleLinkedList<T>::SingleLinkedList(T element) {
     head->next = NULL;
 }
 
+//return number of nodes in a list
+template <typename T>
+int SingleLinkedList<T>::getLengthList() {
+    Node<T>* temp = head;
+    int length = 0;
+
+    //empty list
+    if (temp == NULL) {
+        return length;
+    }
+
+    //traverse list till the end
+    while (temp->next != NULL) {
+        length++;
+        temp = temp->next;
+    }
+
+    return length;
+}
+
 //add element to end of list
 template <typename T>
 void SingleLinkedList<T>::insertNode(T element) {
@@ -85,6 +108,17 @@ void SingleLinkedList<T>::insertNode(T element) {
     temp->next = node;
 }
 
+//delete at particular index
+template <typename T>
+void SingleLinkedList<T>::deleteNode(int index) {
+
+}
+
+//delete element
+template <typename T>
+void SingleLinkedList<T>::deleteNode(T element) {
+
+}
 
 template <typename T>
 void printList(Node<T>* n)
