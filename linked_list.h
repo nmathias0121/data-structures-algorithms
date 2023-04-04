@@ -5,8 +5,9 @@ using namespace std;
 template <typename T>
 class Node {
  public:
+    //add or remove member variables
     T element;
-    Node* next;
+    Node<T>* next;
 
     //default constructor
     Node()
@@ -14,13 +15,53 @@ class Node {
         next = NULL;
     }
 
-    //constructor with parameter
+    //non default constructor
     Node(T element)
     {
         this->element = element;
         this->next = NULL;
     }
 };
+
+template <typename T>
+class SingleLinkedList {
+    Node<T>* head;
+  
+public:
+    // Default constructor
+    SingleLinkedList();
+
+    // Non-Default constructor
+    SingleLinkedList(T element);
+
+    //destructor
+    ~SingleLinkedList();
+  
+    //add element to end of list
+    void insertNode(int);
+  
+    //delete at particular index
+    void deleteNode(int);
+
+    //add element to a particular index or after a particular element
+
+    //delete a particular value
+
+    //print linked list
+};
+
+//default constructor
+template <typename T>
+SingleLinkedList<T>::SingleLinkedList() {
+    head = NULL;
+}
+
+//non-default constructor
+template <typename T>
+SingleLinkedList<T>::SingleLinkedList(T element) {
+    head->element = element;
+    head->next = NULL;
+}
 
 
 template <typename T>
@@ -31,24 +72,3 @@ void printList(Node<T>* n)
         n = n->next;
     }
 }
-
-template <typename T>
-class SingleLinkedList {
- public:
-    Node<T>* head;
-
- private:
-    //constructors
-
-    //destructor
-
-    //add element to end of list
-
-    //add element to a particular index or after a particular element
-
-    //print list
-
-    //delete at particular index
-
-    //delete a particular value
-};

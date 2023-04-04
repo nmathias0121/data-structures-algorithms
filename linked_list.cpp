@@ -23,6 +23,7 @@ int main()
     
     
     printList(head);
+    cout << endl;
 
     return 0;
 }
