@@ -50,7 +50,7 @@ public:
     void deleteNode(T element);
 
     //print linked list
-    void printList(SingleLinkedList list);
+    void printList();
 };
 
 //default constructor
