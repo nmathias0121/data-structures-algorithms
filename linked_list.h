@@ -5,7 +5,7 @@ using namespace std;
 template <typename T>
 class Node {
  public:
-    //add or remove member variables
+    //add or remove member variables - update node & linked list functions too!
     T element;
     Node<T>* next;
 
@@ -38,16 +38,16 @@ public:
     ~SingleLinkedList();
   
     //add element to end of list
-    void insertNode(int);
+    void insertNode(T element);
   
     //delete at particular index
-    void deleteNode(int);
+    void deleteNode(int index);
 
-    //add element to a particular index or after a particular element
-
-    //delete a particular value
+    //delete element
+    void deleteNode(T element);
 
     //print linked list
+    void printList(SingleLinkedList list);
 };
 
 //default constructor
@@ -61,6 +61,28 @@ template <typename T>
 SingleLinkedList<T>::SingleLinkedList(T element) {
     head->element = element;
     head->next = NULL;
+}
+
+//add element to end of list
+template <typename T>
+void SingleLinkedList<T>::insertNode(T element) {
+    //create new node
+    Node<T>* node = new Node(element);
+  
+    //if list is empty
+    if (head == NULL) {
+        head = node;
+        return;
+    }
+  
+    //traverse list till end
+    Node<T>* temp = head;
+    while (temp->next != NULL) {
+        temp = temp->next;
+    }
+  
+    //insert at the last
+    temp->next = node;
 }
 
 
